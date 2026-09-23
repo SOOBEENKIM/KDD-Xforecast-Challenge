@@ -11,6 +11,13 @@ market-wide signals, and pretrained time-series forecasting.
 contains its own model pipeline and reads the files it needs from that shared
 dataset; the data is stored once in GitHub Releases, not embedded in the notebooks.
 
+For the exact files to retain and model-specific restore commands, see
+[the minimal reproduction guide / 최소 보관·재실행 안내](REPRODUCE.md) and
+[model-inputs.json](model-inputs.json). Re-running these three pipelines requires
+the archived notebooks and raw inputs, installed dependencies, and the downloadable
+Chronos pretrained model. Prior workstation runs and unrelated experiments are
+outside the archive scope.
+
 ## Models
 
 | Notebook | Role | Model configuration | Inputs from the shared dataset |
@@ -151,8 +158,10 @@ snapshot can be supplied through `MODEL_PATH` for offline execution.
    requires train/test and all six embedding files in the **same directory**.
    The submission template may be attached separately.
 3. Use an environment with `torch`, `numpy`, `pandas`, `pyarrow`, and
-   `scikit-learn`. The originals record Python 3.12.13, but no exact package lock
-   was supplied for their original runs.
+   `scikit-learn`. [requirements-final.txt](requirements-final.txt) provides an
+   import-checked starting environment for both final notebooks. The originals
+   record Python 3.12.13, but no exact package lock was supplied for their original
+   runs; the new dependency file is not a reconstruction of that original lock.
 4. Run cells in order. The notebooks write their embedded model modules into
    `/kaggle/working`, prepare features, train, and create `submission.csv`.
 
@@ -201,9 +210,14 @@ those Kaggle paths. Their source code is preserved as supplied.
   validation periods, anchor isolation, and generation of all 52,000 template
   rows. Its pinned model revision, environment and results are documented in
   [archive/chronos/verification.json](archive/chronos/verification.json).
-- Final 1 and Final 2 were not retrained during archiving. Their original weights
-  and final prediction CSVs are not yet included. The Chronos environment pins do
-  not establish the original final-submission environment, and identical results
+- All three notebooks passed code-cell compilation. Each final notebook's 26
+  embedded modules were imported in an empty temporary directory with no missing
+  internal module. See [the dependency audit](archive/dependency-audit.json).
+- Trained weights, prediction CSVs and generated feature caches are intentionally
+  excluded: the three notebooks recreate these from their inputs. The original
+  workstation's other models and experiment history are also outside this scope.
+- Final 1 and Final 2 were not retrained during archiving. The environment pins
+  do not establish their original Kaggle environment, and identical results
   across different hardware/software are not guaranteed.
 - The original final notebooks are submission archives. In particular, Final 2
   uses its Private configuration for both submission blocks, and its 2022 block

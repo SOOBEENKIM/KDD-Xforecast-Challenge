@@ -1,0 +1,9 @@
+# Starting environment for both final notebooks, checked by importing all
+# embedded modules on Python 3.11.9. This is NOT their original Kaggle lockfile
+# and does not imply that full training was rerun in this environment.
+# For CUDA, install torch==2.4.1 from the appropriate official wheel index first.
+torch==2.4.1
+numpy==1.26.4
+pandas==2.2.3
+pyarrow==17.0.0
+scikit-learn==1.5.2

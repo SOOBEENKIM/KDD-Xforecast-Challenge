@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "scope": "Only three archived model pipelines. Regenerable outputs and unrelated experiments are intentionally excluded.",
+  "repository": "SOOBEENKIM/KDD-Xforecast-Challenge",
+  "input_manifest": "input-manifest.json",
+  "download_script": "scripts/download_inputs.cjs",
+  "instructions": "REPRODUCE.md",
+  "models": [
+    {
+      "id": "final",
+      "notebook": "finx-hanyang-xforecast-final.ipynb",
+      "dependencies": "requirements-final.txt",
+      "inputs": [
+        {
+          "path": "kaggle/train.parquet",
+          "size": 7875204,
+          "sha256": "3ae81dfe1c4ef8d2e42c7aa062e1cc727d7c7219c463b7430869e1ad5c269667"
+        },
+        {
+          "path": "kaggle/test.parquet",
+          "size": 9710950,
+          "sha256": "b9444bd543fe3196db769f2c55321f0c290dc5dd2378b1426926fab23c7f2bb8"
+        },
+        {
+          "path": "kaggle/gemini_textemb.parquet",
+          "size": 10658840969,
+          "sha256": "2e11dffc696f8df97ad0e488380bc48cdfdd02dded3e81ebe304fd8fcb200782"
+        }
+      ],
+      "pretrained_model": null,
+      "execution": "Train from raw inputs in a fresh Kaggle session or a local environment with equivalent paths.",
+      "generated": [
+        "embedded models/, modules/, utils/ Python files",
+        "features/",
+        "result/weight/",
+        "submission.csv"
+      ],
+      "notebook_sha256": "f2ba8c18070d8fb3d05a20f4ee6adc10716173b143b5b7ff077ef68bf01cab79",
+      "required_additional_workstation_source_files": [],
+      "requires_prior_run_weights": false
+    },
+    {
+      "id": "final2",
+      "notebook": "finx-hanyang-xforecast-final2.ipynb",
+      "dependencies": "requirements-final.txt",
+      "inputs": [
+        {
+          "path": "kaggle/train.parquet",
+          "size": 7875204,
+          "sha256": "3ae81dfe1c4ef8d2e42c7aa062e1cc727d7c7219c463b7430869e1ad5c269667"
+        },
+        {
+          "path": "kaggle/test.parquet",
+          "size": 9710950,
+          "sha256": "b9444bd543fe3196db769f2c55321f0c290dc5dd2378b1426926fab23c7f2bb8"
+        },
+        {
+          "path": "kaggle/bert_textemb.parquet",
+          "size": 1335889297,
+          "sha256": "4430f597d1ce68491ca5450bb8ceefdebb1d11d40e1758fa8cbed22b0b96451e"
+        },
+        {
+          "path": "kaggle/gemini_textemb.parquet",
+          "size": 10658840969,
+          "sha256": "2e11dffc696f8df97ad0e488380bc48cdfdd02dded3e81ebe304fd8fcb200782"
+        },
+        {
+          "path": "kaggle/lgai_textemb.parquet",
+          "size": 14210160523,
+          "sha256": "40e72a8ec2ca2cd61661b4357c613624e6b1c7933d507d0aa0d8dd511678bc5e"
+        },
+        {
+          "path": "kaggle/linq_textemb.parquet",
+          "size": 14210216963,
+          "sha256": "8fd3fd1b76df85b2aec6aa090503909dd09e2f6ed9174f9187f5ebf77d16872e"
+        },
+        {
+          "path": "kaggle/nvda_textemb.parquet",
+          "size": 14210902400,
+          "sha256": "2d27a4b85e6a609f11170c9ec95c94a0a21fb194d0ace26033006a54d1741ce7"
+        },
+        {
+          "path": "kaggle/qwen_textemb.parquet",
+          "size": 14210780723,
+          "sha256": "90701c080305e6348a1c831e0010f302236fab2ef5294b48648fa69927cac4bd"
+        },
+        {
+          "path": "submission_samples.csv",
+          "size": 1125659,
+          "sha256": "2cb30a518d4b3968f2541661d15b78446ef922d35455a56bcca4eed2b0b54696"
+        }
+      ],
+      "pretrained_model": null,
+      "execution": "Train from raw inputs in a separate fresh Kaggle session; all eight Parquets must share one directory.",
+      "generated": [
+        "embedded models/, modules/, utils/ Python files",
+        "xforecast_top3_panel.parquet",
+        "features/",
+        "component checkpoints and predictions",
+        "submission.csv"
+      ],
+      "notebook_sha256": "f438b2c53cf811678c5db0b08f95545abdbfe52a43c6083ccaadbba62b6f869e",
+      "required_additional_workstation_source_files": [],
+      "requires_prior_run_weights": false
+    },
+    {
+      "id": "chronos",
+      "notebook": "finx-hanyang-xforecast-chronos.ipynb",
+      "dependencies": "requirements-chronos.txt",
+      "inputs": [
+        {
+          "path": "kaggle/train.parquet",
+          "size": 7875204,
+          "sha256": "3ae81dfe1c4ef8d2e42c7aa062e1cc727d7c7219c463b7430869e1ad5c269667"
+        },
+        {
+          "path": "kaggle/test.parquet",
+          "size": 9710950,
+          "sha256": "b9444bd543fe3196db769f2c55321f0c290dc5dd2378b1426926fab23c7f2bb8"
+        },
+        {
+          "path": "submission_samples.csv",
+          "size": 1125659,
+          "sha256": "2cb30a518d4b3968f2541661d15b78446ef922d35455a56bcca4eed2b0b54696"
+        }
+      ],
+      "input_roles": {
+        "kaggle/train.parquet": "optional historical validation",
+        "kaggle/test.parquet": "submission inference",
+        "submission_samples.csv": "submission ID grid"
+      },
+      "pretrained_model": {
+        "id": "amazon/chronos-bolt-small",
+        "revision": "772f3d25d38aec6d914c8949dab4462e2d46f5d8",
+        "source": "https://huggingface.co/amazon/chronos-bolt-small/tree/772f3d25d38aec6d914c8949dab4462e2d46f5d8",
+        "retrieved_by": "BaseChronosPipeline.from_pretrained in the notebook; no local workstation cache required",
+        "stored_in_github_release": false
+      },
+      "execution": "Run in local Jupyter from the checkout or in Kaggle; package installation and first model download require network access.",
+      "generated": [
+        "outputs/chronos/submission.csv",
+        "validation_predictions.csv",
+        "validation_metrics.json",
+        "environment.json"
+      ],
+      "notebook_sha256": "93c1622883e96a6c7a7733cce973726531b4cf038bc37449ab1c9fc3bb394560",
+      "required_additional_workstation_source_files": [],
+      "requires_prior_run_weights": false
+    }
+  ]
+}
