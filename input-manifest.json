@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "repository": "SOOBEENKIM/KDD-Xforecast-Challenge",
+  "release_tag": "competition-inputs-2026-09-23",
+  "complete": true,
+  "total_bytes": 69068724930,
+  "files": [
+    {
+      "path": "kaggle/bert_textemb.parquet",
+      "size": 1335889297,
+      "sha256": "4430f597d1ce68491ca5450bb8ceefdebb1d11d40e1758fa8cbed22b0b96451e",
+      "parts": [
+        {
+          "name": "bert_textemb.parquet",
+          "offset": 0,
+          "size": 1335889297,
+          "sha256": "4430f597d1ce68491ca5450bb8ceefdebb1d11d40e1758fa8cbed22b0b96451e"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/bert_textemb_sample.csv",
+      "size": 1415242,
+      "sha256": "f2e0556a7e04d3db651724739fc167437a2670eb3c96cd724b7a95e7188c67ad",
+      "parts": [
+        {
+          "name": "bert_textemb_sample.csv",
+          "offset": 0,
+          "size": 1415242,
+          "sha256": "f2e0556a7e04d3db651724739fc167437a2670eb3c96cd724b7a95e7188c67ad"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/gemini_textemb.parquet",
+      "size": 10658840969,
+      "sha256": "2e11dffc696f8df97ad0e488380bc48cdfdd02dded3e81ebe304fd8fcb200782",
+      "parts": [
+        {
+          "name": "gemini_textemb.parquet.part-0001-of-0006",
+          "offset": 0,
+          "size": 1900000000,
+          "sha256": "0426cd549b1c750ae4ab23be642f71be11a19f46d7f1496afd005029b18207e3"
+        },
+        {
+          "name": "gemini_textemb.parquet.part-0002-of-0006",
+          "offset": 1900000000,
+          "size": 1900000000,
+          "sha256": "abfedaad72e03a040488a2a1f84565d7fec3509b1657f1e4ad3f893ec4293d77"
+        },
+        {
+          "name": "gemini_textemb.parquet.part-0003-of-0006",
+          "offset": 3800000000,
+          "size": 1900000000,
+          "sha256": "d7a071f79c9ea8d7ea3b455db2205f406c4d9e56c3f8486332d008977980ebd8"
+        },
+        {
+          "name": "gemini_textemb.parquet.part-0004-of-0006",
+          "offset": 5700000000,
+          "size": 1900000000,
+          "sha256": "7d1b7c4179cc9a28d534bd13cc8ed8f6445cbe845dde3f4e3db85b1ad08e6fff"
+        },
+        {
+          "name": "gemini_textemb.parquet.part-0005-of-0006",
+          "offset": 7600000000,
+          "size": 1900000000,
+          "sha256": "098b96584e59d1fcba10fb49a12ab4dbd3d0184917f03687f424fb719763549a"
+        },
+        {
+          "name": "gemini_textemb.parquet.part-0006-of-0006",
+          "offset": 9500000000,
+          "size": 1158840969,
+          "sha256": "6cc2ef05126bd62de407303db1b1a70e2e7bb2699d339e5a1929f13a050e75f2"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/gemini_textemb_sample.csv",
+      "size": 11769198,
+      "sha256": "12337c8afc98d7f9359fbf74b967e29d88cad1fe068436edd592bbaf2fdb920d",
+      "parts": [
+        {
+          "name": "gemini_textemb_sample.csv",
+          "offset": 0,
+          "size": 11769198,
+          "sha256": "12337c8afc98d7f9359fbf74b967e29d88cad1fe068436edd592bbaf2fdb920d"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/lgai_textemb.parquet",
+      "size": 14210160523,
+      "sha256": "40e72a8ec2ca2cd61661b4357c613624e6b1c7933d507d0aa0d8dd511678bc5e",
+      "parts": [
+        {
+          "name": "lgai_textemb.parquet.part-0001-of-0008",
+          "offset": 0,
+          "size": 1900000000,
+          "sha256": "7130253d497f79c3040b4e1664691dd56a708410f1ed9860b8fbd2cbcfe3500f"
+        },
+        {
+          "name": "lgai_textemb.parquet.part-0002-of-0008",
+          "offset": 1900000000,
+          "size": 1900000000,
+          "sha256": "d2182dca1dc23ffb97c47eed9d037f4337e604ec7ee90137a87a1b379a31a487"
+        },
+        {
+          "name": "lgai_textemb.parquet.part-0003-of-0008",
+          "offset": 3800000000,
+          "size": 1900000000,
+          "sha256": "da4715999e5a24d7383490c64233264e806e19dc2afb059466452e8a0bd20e67"
+        },
+        {
+          "name": "lgai_textemb.parquet.part-0004-of-0008",
+          "offset": 5700000000,
+          "size": 1900000000,
+          "sha256": "43c6b893e07aaedd44ae9b3d394a31f210feefff2d9d2978f9a2759e5150fad1"
+        },
+        {
+          "name": "lgai_textemb.parquet.part-0005-of-0008",
+          "offset": 7600000000,
+          "size": 1900000000,
+          "sha256": "7797136f1236a34fbe715f5880c5928cf552179c01e283d8a00da4a5bcba8559"
+        },
+        {
+          "name": "lgai_textemb.parquet.part-0006-of-0008",
+          "offset": 9500000000,
+          "size": 1900000000,
+          "sha256": "bcf39207679d68fb7a7bac07b39586723b651924cd71ce915d98c95d4f4c517e"
+        },
+        {
+          "name": "lgai_textemb.parquet.part-0007-of-0008",
+          "offset": 11400000000,
+          "size": 1900000000,
+          "sha256": "9c449bbd281ef7b270c1ed5558d02f68ce0855ce5d5f08c517c212a9e3d54170"
+        },
+        {
+          "name": "lgai_textemb.parquet.part-0008-of-0008",
+          "offset": 13300000000,
+          "size": 910160523,
+          "sha256": "f0945362590dd454938688b1c327262000a483ff0906fe85ae8103f79ebf4646"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/lgai_textemb_sample.csv",
+      "size": 12848004,
+      "sha256": "f7cc05dc07b5b13923bc8737c4bcd062ec6fef52fee0b8929b2025392447929c",
+      "parts": [
+        {
+          "name": "lgai_textemb_sample.csv",
+          "offset": 0,
+          "size": 12848004,
+          "sha256": "f7cc05dc07b5b13923bc8737c4bcd062ec6fef52fee0b8929b2025392447929c"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/linq_textemb.parquet",
+      "size": 14210216963,
+      "sha256": "8fd3fd1b76df85b2aec6aa090503909dd09e2f6ed9174f9187f5ebf77d16872e",
+      "parts": [
+        {
+          "name": "linq_textemb.parquet.part-0001-of-0008",
+          "offset": 0,
+          "size": 1900000000,
+          "sha256": "81b7b24cfbc5f2fe20201d34f124dbfd20e801bbceea88f764c0e20a85f73789"
+        },
+        {
+          "name": "linq_textemb.parquet.part-0002-of-0008",
+          "offset": 1900000000,
+          "size": 1900000000,
+          "sha256": "3662a652e35296221ef494b5f017600190437e62deb369168af3dfdad82a26ea"
+        },
+        {
+          "name": "linq_textemb.parquet.part-0003-of-0008",
+          "offset": 3800000000,
+          "size": 1900000000,
+          "sha256": "c2004db959eb27c7cbc969b498f59375aa75cffcd78c872fc29b09b0063e7b9d"
+        },
+        {
+          "name": "linq_textemb.parquet.part-0004-of-0008",
+          "offset": 5700000000,
+          "size": 1900000000,
+          "sha256": "354f0fc51143736881d8eafe603ec4345656ba3ea430e55a931639fc1339d208"
+        },
+        {
+          "name": "linq_textemb.parquet.part-0005-of-0008",
+          "offset": 7600000000,
+          "size": 1900000000,
+          "sha256": "30a1aa8c2ab4b9fccff9a1523e132b1afb4f377e69dd8569a77d8fb349a41fa1"
+        },
+        {
+          "name": "linq_textemb.parquet.part-0006-of-0008",
+          "offset": 9500000000,
+          "size": 1900000000,
+          "sha256": "3d7fbcc13dac97a41c1110c2c64f3bdedb3ab79d563fcc2083241e00a1cd54a9"
+        },
+        {
+          "name": "linq_textemb.parquet.part-0007-of-0008",
+          "offset": 11400000000,
+          "size": 1900000000,
+          "sha256": "fd0c484147526fe58bbde95ca700f7e7c116a5e901615e53d5058398280881ad"
+        },
+        {
+          "name": "linq_textemb.parquet.part-0008-of-0008",
+          "offset": 13300000000,
+          "size": 910216963,
+          "sha256": "e3f9a1fc168285dc626d191c38cc4e0709eb4dd12a9e3689325d8feb4ab8c579"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/linq_textemb_sample.csv",
+      "size": 13178851,
+      "sha256": "3ed93a752c234fd27c339787b1beccaad114aec09174a532e66f6ca32499412f",
+      "parts": [
+        {
+          "name": "linq_textemb_sample.csv",
+          "offset": 0,
+          "size": 13178851,
+          "sha256": "3ed93a752c234fd27c339787b1beccaad114aec09174a532e66f6ca32499412f"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/nvda_textemb.parquet",
+      "size": 14210902400,
+      "sha256": "2d27a4b85e6a609f11170c9ec95c94a0a21fb194d0ace26033006a54d1741ce7",
+      "parts": [
+        {
+          "name": "nvda_textemb.parquet.part-0001-of-0008",
+          "offset": 0,
+          "size": 1900000000,
+          "sha256": "ae7601498ee27cfd9ffdd0a9896b14c694b46a88e64073a29b62251f1b3eccc7"
+        },
+        {
+          "name": "nvda_textemb.parquet.part-0002-of-0008",
+          "offset": 1900000000,
+          "size": 1900000000,
+          "sha256": "564ed1197b7d0ce1ed0fc2d04dc96ae99ff50a91287aba16a889d76a3496a8a3"
+        },
+        {
+          "name": "nvda_textemb.parquet.part-0003-of-0008",
+          "offset": 3800000000,
+          "size": 1900000000,
+          "sha256": "fce5643810c3f3c41584a76ba70cb87f117db5fb67be6ee72dd8b6c277ff4e42"
+        },
+        {
+          "name": "nvda_textemb.parquet.part-0004-of-0008",
+          "offset": 5700000000,
+          "size": 1900000000,
+          "sha256": "63da37b2b8b971f7101cabcd6991c72b36c7c2532ed64bd6b4e1fdc2950e4234"
+        },
+        {
+          "name": "nvda_textemb.parquet.part-0005-of-0008",
+          "offset": 7600000000,
+          "size": 1900000000,
+          "sha256": "7863f4c23dd97c7889bc464772cbc643c12059df643c5f7b653631b33db5e5d0"
+        },
+        {
+          "name": "nvda_textemb.parquet.part-0006-of-0008",
+          "offset": 9500000000,
+          "size": 1900000000,
+          "sha256": "2af0ee1f7de6d60170e5b9c9529ae3bdc8869a97c44d3c727b77d050f302f7f4"
+        },
+        {
+          "name": "nvda_textemb.parquet.part-0007-of-0008",
+          "offset": 11400000000,
+          "size": 1900000000,
+          "sha256": "d75b153eb5595b594e67516347cbff94462f78205befcf134081cffd9fe81609"
+        },
+        {
+          "name": "nvda_textemb.parquet.part-0008-of-0008",
+          "offset": 13300000000,
+          "size": 910902400,
+          "sha256": "f204b77a291a36303ea0696ce7087b373a3e109a579d361c8386ed48c7b543a1"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/nvda_textemb_sample.csv",
+      "size": 15653702,
+      "sha256": "30a9f4edd2e3822e6f7a522b27366c7cb1827fbb0fa079f78e9ae6f04ab2a4ab",
+      "parts": [
+        {
+          "name": "nvda_textemb_sample.csv",
+          "offset": 0,
+          "size": 15653702,
+          "sha256": "30a9f4edd2e3822e6f7a522b27366c7cb1827fbb0fa079f78e9ae6f04ab2a4ab"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/qwen_textemb.parquet",
+      "size": 14210780723,
+      "sha256": "90701c080305e6348a1c831e0010f302236fab2ef5294b48648fa69927cac4bd",
+      "parts": [
+        {
+          "name": "qwen_textemb.parquet.part-0001-of-0008",
+          "offset": 0,
+          "size": 1900000000,
+          "sha256": "4b2835fc010e8eae5c9f1c5c19ee5ca317cb1405b2938d56379b84bdc5e1afd2"
+        },
+        {
+          "name": "qwen_textemb.parquet.part-0002-of-0008",
+          "offset": 1900000000,
+          "size": 1900000000,
+          "sha256": "deea69f0c2778dd01ba12f78f9c834ef540ecfe2d1e57212dd41130f029d023c"
+        },
+        {
+          "name": "qwen_textemb.parquet.part-0003-of-0008",
+          "offset": 3800000000,
+          "size": 1900000000,
+          "sha256": "cc05c25ca46ddd02abc9ca0ac95e3ed244eb1a17738a5cf8473fea92cf490ec1"
+        },
+        {
+          "name": "qwen_textemb.parquet.part-0004-of-0008",
+          "offset": 5700000000,
+          "size": 1900000000,
+          "sha256": "47e5ff99151a4aab840550e6cb823a250462e395e49277028d7468fc6747d3d5"
+        },
+        {
+          "name": "qwen_textemb.parquet.part-0005-of-0008",
+          "offset": 7600000000,
+          "size": 1900000000,
+          "sha256": "7a993b3516740a1999d5430824c9ec523251157558475c2f2c266a7bd203c0f9"
+        },
+        {
+          "name": "qwen_textemb.parquet.part-0006-of-0008",
+          "offset": 9500000000,
+          "size": 1900000000,
+          "sha256": "0bdc3160c348886d2af34521bde50b48784682444aa2147622abd40297de451e"
+        },
+        {
+          "name": "qwen_textemb.parquet.part-0007-of-0008",
+          "offset": 11400000000,
+          "size": 1900000000,
+          "sha256": "2a816757788b8843d354e0f58ccaaf4487bf35d1ebcac1fadf0ca1909e69a22f"
+        },
+        {
+          "name": "qwen_textemb.parquet.part-0008-of-0008",
+          "offset": 13300000000,
+          "size": 910780723,
+          "sha256": "c85ceee4831171935d8a7262e1374b329697181ffa995a22fd4b75fc7f00df6d"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/qwen_textemb_sample.csv",
+      "size": 15668771,
+      "sha256": "52f0f018417e7de1a2455f77b108a0fef047799cfbbd449b19eed1008081c499",
+      "parts": [
+        {
+          "name": "qwen_textemb_sample.csv",
+          "offset": 0,
+          "size": 15668771,
+          "sha256": "52f0f018417e7de1a2455f77b108a0fef047799cfbbd449b19eed1008081c499"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/test.parquet",
+      "size": 9710950,
+      "sha256": "b9444bd543fe3196db769f2c55321f0c290dc5dd2378b1426926fab23c7f2bb8",
+      "parts": [
+        {
+          "name": "test.parquet",
+          "offset": 0,
+          "size": 9710950,
+          "sha256": "b9444bd543fe3196db769f2c55321f0c290dc5dd2378b1426926fab23c7f2bb8"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/test_sample.csv",
+      "size": 89701,
+      "sha256": "f4f460590b3531ae837b255ad1b91c6108db9f662243ec2ec15a42949b349e7f",
+      "parts": [
+        {
+          "name": "test_sample.csv",
+          "offset": 0,
+          "size": 89701,
+          "sha256": "f4f460590b3531ae837b255ad1b91c6108db9f662243ec2ec15a42949b349e7f"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/text.parquet",
+      "size": 139711805,
+      "sha256": "2d6986d6fa95342af29c095f1b3ac7c2bd8c0fdb7718a38fe5f72a6023383041",
+      "parts": [
+        {
+          "name": "text.parquet",
+          "offset": 0,
+          "size": 139711805,
+          "sha256": "2d6986d6fa95342af29c095f1b3ac7c2bd8c0fdb7718a38fe5f72a6023383041"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/text_sample.csv",
+      "size": 2797267,
+      "sha256": "c947f9a73111ac6597e20778366c638fb1ee6fc04cae659d3d43026b6f673236",
+      "parts": [
+        {
+          "name": "text_sample.csv",
+          "offset": 0,
+          "size": 2797267,
+          "sha256": "c947f9a73111ac6597e20778366c638fb1ee6fc04cae659d3d43026b6f673236"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/train.parquet",
+      "size": 7875204,
+      "sha256": "3ae81dfe1c4ef8d2e42c7aa062e1cc727d7c7219c463b7430869e1ad5c269667",
+      "parts": [
+        {
+          "name": "train.parquet",
+          "offset": 0,
+          "size": 7875204,
+          "sha256": "3ae81dfe1c4ef8d2e42c7aa062e1cc727d7c7219c463b7430869e1ad5c269667"
+        }
+      ]
+    },
+    {
+      "path": "kaggle/train_sample.csv",
+      "size": 89701,
+      "sha256": "f4f460590b3531ae837b255ad1b91c6108db9f662243ec2ec15a42949b349e7f",
+      "parts": [
+        {
+          "name": "train_sample.csv",
+          "offset": 0,
+          "size": 89701,
+          "sha256": "f4f460590b3531ae837b255ad1b91c6108db9f662243ec2ec15a42949b349e7f"
+        }
+      ]
+    },
+    {
+      "path": "submission_samples.csv",
+      "size": 1125659,
+      "sha256": "2cb30a518d4b3968f2541661d15b78446ef922d35455a56bcca4eed2b0b54696",
+      "parts": [
+        {
+          "name": "submission_samples.csv",
+          "offset": 0,
+          "size": 1125659,
+          "sha256": "2cb30a518d4b3968f2541661d15b78446ef922d35455a56bcca4eed2b0b54696"
+        }
+      ]
+    }
+  ]
+}

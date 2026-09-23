@@ -17,7 +17,41 @@ equally with the RegimeDiffusion probability before the market-common blend.
 
 Both notebooks use the organizer-provided XForecast dataset. The required
 filenames were found in the local competition data directory during packaging.
-Raw data, model weights, and generated predictions are not included in this repository.
+The original inputs are archived separately in
+[GitHub Releases](https://github.com/SOOBEENKIM/KDD-Xforecast-Challenge/releases/tag/competition-inputs-2026-09-23).
+Model weights and generated predictions are not included.
+
+### Download and restore the inputs
+
+The archive contains **19 original files, 69,068,724,930 bytes (64.33 GiB)**:
+nine Parquet files, their nine sample CSVs, and the submission template. Large
+files are split into raw byte ranges and restored without changing their contents.
+
+Clone this repository, install Node.js 18 or later, and run:
+
+```sh
+node scripts/download_inputs.cjs ./data
+```
+
+Allow at least 70 GB of free disk space for the data. The script downloads the
+release assets, verifies each part's SHA-256, reconstructs the original files,
+and verifies their full SHA-256 before installing them. Existing verified files
+are reused on a later run; an interrupted file is downloaded again. Different
+existing files are never overwritten.
+
+The restored layout is `data/kaggle/` for the dataset files and
+`data/submission_samples.csv` for the template. The exact filenames, sizes, part
+order, and checksums are recorded in [input-manifest.json](input-manifest.json).
+The release also contains a copy of this manifest.
+
+For a small download check, restore only the training table and template:
+
+```sh
+node scripts/download_inputs.cjs ./data --only kaggle/train.parquet,submission_samples.csv
+```
+
+The raw data is stored as release assets, so a normal Git clone downloads only
+the notebooks, documentation, manifest, and restoration script.
 
 | Input file | `final` | `final2` |
 | --- | :---: | :---: |
