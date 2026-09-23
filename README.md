@@ -34,7 +34,7 @@ node scripts/download_inputs.cjs ./data
 ```
 
 Allow at least 70 GB of free disk space for the data. The script downloads the
-release assets, verifies each part's SHA-256, reconstructs the original files,
+release assets (up to four parts concurrently), verifies each part's SHA-256, reconstructs the original files,
 and verifies their full SHA-256 before installing them. Existing verified files
 are reused on a later run; an interrupted file is downloaded again. Different
 existing files are never overwritten.

@@ -5,8 +5,6 @@ const fsp = fs.promises;
 const path = require('path');
 const https = require('https');
 const crypto = require('crypto');
-const { Transform } = require('stream');
-const { pipeline } = require('stream/promises');
 
 const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'input-manifest.json'), 'utf8'));
 const args = process.argv.slice(2);
@@ -55,26 +53,50 @@ async function restore(file) {
     throw new Error('An existing file differs; refusing to overwrite: ' + target);
   }
   const temporary = target + `.download-${process.pid}`;
-  const handle = await fsp.open(temporary, 'wx'); await handle.close();
-  const whole = hash(); let total = 0;
+  let expectedOffset = 0;
+  for (const part of file.parts) {
+    if (part.offset !== expectedOffset || !Number.isSafeInteger(part.size) || part.size <= 0 || !/^[a-zA-Z0-9_.-]+$/.test(part.name)) throw new Error('Invalid manifest part');
+    expectedOffset += part.size;
+  }
+  if (expectedOffset !== file.size) throw new Error('Invalid manifest file size');
+  const handle = await fsp.open(temporary, 'wx');
+  let closed = false, next = 0, received = 0, failure;
+  const timer = setInterval(() => console.log(`Received ${received} / ${file.size} bytes: ${file.path}`), 30000);
+  timer.unref();
   try {
-    for (const part of file.parts) {
-      if (part.offset !== total || !Number.isSafeInteger(part.size) || part.size <= 0 || !/^[a-zA-Z0-9_.-]+$/.test(part.name)) throw new Error('Invalid manifest part');
-      console.log('Downloading: ' + part.name);
-      const piece = hash(); let size = 0;
-      await pipeline(await get(base + encodeURIComponent(part.name)), new Transform({
-        transform(chunk, encoding, callback) { piece.update(chunk); whole.update(chunk); size += chunk.length; callback(null, chunk); }
-      }), fs.createWriteStream(temporary, { flags: 'a' }));
-      if (size !== part.size || piece.digest('hex') !== part.sha256) throw new Error('Part checksum mismatch: ' + part.name);
-      total += size;
+    await handle.truncate(file.size);
+    async function worker() {
+      while (!failure && next < file.parts.length) {
+        const part = file.parts[next++];
+        console.log('Downloading: ' + part.name);
+        const piece = hash(); let size = 0;
+        try {
+          for await (const chunk of await get(base + encodeURIComponent(part.name))) {
+            if (size + chunk.length > part.size) throw new Error('Part exceeds expected size: ' + part.name);
+            piece.update(chunk);
+            for (let written = 0; written < chunk.length;) {
+              const result = await handle.write(chunk, written, chunk.length - written, part.offset + size + written);
+              if (!result.bytesWritten) throw new Error('Failed to write downloaded bytes');
+              written += result.bytesWritten;
+            }
+            size += chunk.length; received += chunk.length;
+          }
+          if (size !== part.size || piece.digest('hex') !== part.sha256) throw new Error('Part checksum mismatch: ' + part.name);
+          console.log('Part verified: ' + part.name);
+        } catch (error) { failure = error; }
+      }
     }
-    if (total !== file.size || whole.digest('hex') !== file.sha256) throw new Error('Restored file checksum mismatch: ' + file.path);
+    await Promise.all(Array.from({ length: Math.min(4, file.parts.length) }, worker));
+    if (failure) throw failure;
+    await handle.sync(); await handle.close(); closed = true;
+    if (received !== file.size || await fileHash(temporary) !== file.sha256) throw new Error('Restored file checksum mismatch: ' + file.path);
     // A hard link installs the verified file without overwriting a concurrent file.
     await fsp.link(temporary, target); await fsp.unlink(temporary);
-    console.log(`Verified: ${file.path} (${total} bytes)`);
+    console.log(`Verified: ${file.path} (${received} bytes)`);
   } catch (error) {
+    if (!closed) await handle.close().catch(() => {});
     await fsp.unlink(temporary).catch(() => {}); throw error;
-  }
+  } finally { clearInterval(timer); }
 }
 
 (async () => {
