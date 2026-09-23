@@ -1,0 +1,16 @@
+{
+  "source_path": "scripts/fm1.py",
+  "source_sha256": "1d254a501edd6ebd570ff6025f0db68a604f2d9d537860f3e84e1cecfa41676b",
+  "source_mtime": "2026-07-24T04:53:24.812Z",
+  "archived_at": "2026-09-23",
+  "selection": "Representative Chronos-Bolt-small zero-shot baseline reused across historical experiments; no complete three-fold ranking of all variants was recovered.",
+  "notebook": "finx-hanyang-xforecast-chronos.ipynb",
+  "model_id": "amazon/chronos-bolt-small",
+  "model_revision": "772f3d25d38aec6d914c8949dab4462e2d46f5d8",
+  "changes": [
+    "Fixed seed and package/model versions",
+    "Independent input discovery and path configuration",
+    "Restricted target-year validation to 2020, 2021, 2022",
+    "Template-based submission export with fixed directional encoding; no full-year rank or news blend"
+  ]
+}

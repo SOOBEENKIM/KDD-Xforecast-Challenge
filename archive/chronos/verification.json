@@ -1,0 +1,91 @@
+{
+  "notebook_sha256": "93c1622883e96a6c7a7733cce973726531b4cf038bc37449ab1c9fc3bb394560",
+  "validation": [
+    {
+      "target_year": 2020,
+      "n": 24685,
+      "directional_hit": 0.5641482681790561,
+      "always_up_hit": 0.6133279319424751,
+      "auc_up": 0.5044427010206122
+    },
+    {
+      "target_year": 2021,
+      "n": 26087,
+      "directional_hit": 0.5923640127266454,
+      "always_up_hit": 0.6115689807183655,
+      "auc_up": 0.5076454788519659
+    },
+    {
+      "target_year": 2022,
+      "n": 25991,
+      "directional_hit": 0.4886691547073987,
+      "always_up_hit": 0.46173675503058753,
+      "auc_up": 0.5018087663531017
+    }
+  ],
+  "environment": {
+    "python": "3.11.9",
+    "packages": {
+      "torch": "2.4.1+cu121",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "pyarrow": "17.0.0",
+      "scikit-learn": "1.5.2",
+      "chronos-forecasting": "1.5.3",
+      "transformers": "4.48.3",
+      "accelerate": "0.34.2",
+      "huggingface-hub": "0.27.1",
+      "tokenizers": "0.21.4",
+      "safetensors": "0.8.0"
+    },
+    "cuda": "12.1",
+    "device": "NVIDIA GeForce RTX 3090",
+    "dtype": "torch.bfloat16",
+    "seed": 42,
+    "model": "amazon/chronos-bolt-small",
+    "model_revision": "772f3d25d38aec6d914c8949dab4462e2d46f5d8",
+    "context_length": 256,
+    "horizon": 20,
+    "quantiles": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ]
+  },
+  "submission_rows": 52000,
+  "submission_sha256": "942b4cdb39e3c55366225852b094f58d51d327b407f2631442ad39ada4e7e8af",
+  "checks": [
+    "nbformat schema",
+    "all code cells compile",
+    "future-price perturbation leaves anchor context unchanged",
+    "missing-anchor rejection",
+    "template ID ordering",
+    "2020/2021/2022 validation",
+    "all template rows predicted; positive finite Close"
+  ],
+  "elapsed_seconds": 18.84,
+  "verification_date": "2026-09-23",
+  "execution_mode": "All executable notebook cells run in order in one Python process; only data/template/output paths overridden for the workstation.",
+  "endpoint_clamping_preserves_results": true,
+  "limitations": [
+    "Representative historical baseline; no complete ranking of Chronos variants was recovered.",
+    "No end-to-end rerun of the two final-submission notebooks.",
+    "CPU fallback and other GPU types were not exercised."
+  ]
+}
